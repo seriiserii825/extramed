@@ -73,12 +73,14 @@ get_header('sub-banner');
 										<div class="name">
 											<h6><?php the_title(); ?></h6>
 										</div>
-										
+
 										<ul>
-											<li><span class="title">Specialitate</span> <span><?php echo $terms[0]->name; ?></span></li>
-											<li><span class="title">Studii</span> <span><?php echo $study; ?></span></li>
-											<li><span class="title">Experienta</span> <span><?php echo $experience; ?></span></li>
-											<li><span class="title">Despre mine</span> <span><?php the_content(); ?></span></li>
+											<li><span class="title">Specialitate</span>
+                                                <?php echo showTermsInSpan($terms); ?>
+                                            </li>
+                                            <li><span class="title">Studii</span> <span><?php echo $study; ?></span></li>
+                                            <li><span class="title">Experienta</span> <span><?php echo $experience; ?></span></li>
+                                            <li><span class="title">Despre mine</span> <span><?php the_content(); ?></span></li>
 											<li><span class="title">Zile lucratoare</span> <span><?php echo $week; ?></span></li>
 										</ul>
 										

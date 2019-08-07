@@ -262,11 +262,9 @@
 														<?php the_title(); ?>
 													</a>
 												</h6>
-                                                <?php foreach($terms as $term): ?>
-                                                    <span><?php echo $term->name; ?></span>
-                                                <?php endforeach; ?>
+												<?php echo showTermsInSpan($terms); ?>
 												<?php the_excerpt(); ?>
-												<a href="<?php the_permalink(); ?>">- Vezi in Profile</a>
+                                                <a href="<?php the_permalink(); ?>">- Vezi in Profile</a>
 											</div>
 
 										</div>

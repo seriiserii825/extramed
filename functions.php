@@ -2,6 +2,7 @@
 
 if( ! defined('ABSPATH') ) exit;
 
+require_once __DIR__.'/inc/func.php';
 require_once __DIR__.'/inc/carbon-fields/carbon-fields.php';
 require_once __DIR__.'/inc/carbon-fields/carbon-category-posts-meta.php';
 require_once __DIR__.'/inc/carbon-fields/carbon-specialist-post-type.php';
@@ -17,12 +18,6 @@ require_once __DIR__.'/inc/enqueue-style.php';
 require_once __DIR__.'/inc/post-type.php';
 require_once __DIR__.'/inc/taxonomy-specialist.php';
 require_once __DIR__.'/inc/excerpt.php';
-
-function vardump($var) {
-  echo '<pre>';
-  var_dump($var);
-  echo '</pre>';
-}
 
 add_filter( 'widget_text', 'do_shortcode' );
 
