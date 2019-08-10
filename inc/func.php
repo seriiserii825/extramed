@@ -4,6 +4,8 @@ function showTermsInSpan($terms){
 	 $terms_array = [];
 	 $result = '';
 
+	 rsort($terms);
+
 	 foreach($terms as $term){
 		 $terms_array[] = $term->name;
 	 }

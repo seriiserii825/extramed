@@ -43,3 +43,44 @@ function register_post_types(){
 		'query_var'           => true,
 	) );
 }
+
+// хук для регистрации
+add_action( 'init', 'create_profession' );
+function create_profession(){
+	// список параметров: http://wp-kama.ru/function/get_taxonomy_labels
+	register_taxonomy('profession', array('specialist'), array(
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => array(
+			'name'              => esc_html__( 'Профессии', 'bs-dental' ),
+			'singular_name'     => esc_html__( 'Профессия', 'bs-dental' ),
+			'search_items'      => esc_html__( 'Найти профессию', 'bs-dental' ),
+			'all_items'         => esc_html__( 'Все профессии', 'bs-dental' ),
+			'view_item '        => esc_html__( 'Посмотреть профессию', 'bs-dental' ),
+			'parent_item'       => esc_html__( 'профессию', 'bs-dental' ),
+			'parent_item_colon' => esc_html__( 'профессию', 'bs-dental' ),
+			'edit_item'         => esc_html__( 'Редактировать', 'bs-dental' ),
+			'update_item'       => esc_html__( 'Обновить', 'bs-dental' ),
+			'add_new_item'      => esc_html__( 'Добавить', 'bs-dental' ),
+			'new_item_name'     => esc_html__( 'Профессия', 'bs-dental' ),
+			'menu_name'         => esc_html__( 'Профессии', 'bs-dental' ),
+		),
+		'description'           => '', // описание таксономии
+		'public'                => true,
+		'publicly_queryable'    => null, // равен аргументу public
+		'show_in_nav_menus'     => true, // равен аргументу public
+		'show_ui'               => true, // равен аргументу public
+		'show_in_menu'          => true, // равен аргументу show_ui
+		'show_tagcloud'         => true, // равен аргументу show_ui
+		'show_in_rest'          => null, // добавить в REST API
+		'rest_base'             => null, // $taxonomy
+		'hierarchical'          => false,
+		//'update_count_callback' => '_update_post_term_count',
+		'rewrite'               => true,
+		//'query_var'             => $taxonomy, // название параметра запроса
+		'capabilities'          => array(),
+		'meta_box_cb'           => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
+		'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
+		'_builtin'              => false,
+		'show_in_quick_edit'    => null, // по умолчанию значение show_ui
+	) );
+}

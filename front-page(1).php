@@ -262,14 +262,8 @@
 														<?php the_title(); ?>
 													</a>
 												</h6>
-
-                                                <div class="detail-category">
-                                                    <?php echo showTermsInSpan($terms); ?>
-												</div>
-
-                                                <div class="detail-study">
-													<?php the_excerpt(); ?>
-                                                </div>
+												<?php echo showTermsInSpan($terms); ?>
+												<?php the_excerpt(); ?>
                                                 <a href="<?php the_permalink(); ?>">- Vezi in Profile</a>
 											</div>
 
